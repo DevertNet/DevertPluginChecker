@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>Plugin Checker</title>
+        <title lang="de-DE">Plugin Checker</title>
+
+        <input-field type="bool">
+            <name>warningActive</name>
+            <label>Show warning in plugin manager?</label>
+            <label lang="de-DE">Warnung im Plugin Manager anzeigen?</label>
+            <defaultValue>1</defaultValue>
+        </input-field>
+
+        <input-field type="textarea">
+            <name>warningText</name>
+            <label>Text of the warning in the plugin manager</label>
+            <label lang="de-DE">Text der Warnung im Plugin Manager</label>
+            <defaultValue><![CDATA[Plugins werden über die Versionierung (GIT) verwaltet, damit alle Shop-Instanzen (Entwickler, Staging- und Live-System) auf dem gleichen Stand (Version der Plugins, Installierte Plugins) bleiben. Das ist sehr wichtig, da sich das Verhalten in Plugin-Versionen unterscheiden kann.
+Wenn Sie nicht wissen was eine Versionierung (GIT) ist oder diese nicht bedienen können, kontaktieren Sie bitte Ihren Entwickler.
+<strong>Bitte nur in dringenden Fällen</strong> Plugins direkt z.B. im Live-System installieren, updaten oder löschen. Alle Änderungen, die nicht in der Versionierung (GIT) sind müssen später vom Entwickler manuell hinzugefügt werden.]]></defaultValue>
+        </input-field>
+    </card>
+</config>
