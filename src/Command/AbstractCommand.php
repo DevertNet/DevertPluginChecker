@@ -85,6 +85,11 @@ abstract class AbstractCommand extends Command
             $data = file_get_contents($this->getFilePath());
             $data = json_decode($data, true);
 
+            if(!$data)
+            {
+                $data = array();
+            }
+
             $this->checkList = $data;
         }
 
@@ -98,7 +103,7 @@ abstract class AbstractCommand extends Command
         {
             $out[] = [
                 'name' => $plugin->getName(),
-                'installed' => $plugin->getInstalledAt() === null ? false : true,
+                //'installed' => $plugin->getInstalledAt() === null ? false : true,
                 'active' => $plugin->getActive(),
                 'version' => $plugin->getVersion(),
             ];
@@ -127,7 +132,7 @@ abstract class AbstractCommand extends Command
             //search if plugin name is in check list
             $key = array_search($plugin->getName(), array_column($list, 'name'));
 
-            if($key===false)
+            if($plugin->getActive() && $key===false)
             {
                 //plugin not found in list
                 $filtered_plugins[] = [
@@ -219,7 +224,7 @@ abstract class AbstractCommand extends Command
         {
             foreach($filtered_plugins as $item)
             {
-                $output->writeln((string) '  <fg=red>' . $item['plugin']->getName() .  ' (' . ($item['plugin']->getActive() ? 1 : 0) . ' -> ' . $item['checkPlugin']['active'] . ')</>');
+                $output->writeln((string) '  <fg=red>' . $item['plugin']->getName() .  ' (' . ($item['plugin']->getActive() ? 1 : 0) . ' -> ' . ($item['checkPlugin']['active'] ? 1 : 0) . ')</>');
             }
         }else{
             $output->writeln((string) '  <fg=green>No mismatch found!</>');

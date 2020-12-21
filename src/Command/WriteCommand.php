@@ -9,6 +9,12 @@ class WriteCommand extends AbstractCommand
 {
     protected static $defaultName = 'pluginchecker:write';
 
+    protected function configure(): void
+    {
+        $this
+            ->setDescription('Write checklist to file.');
+    }
+
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->writeCheckList();

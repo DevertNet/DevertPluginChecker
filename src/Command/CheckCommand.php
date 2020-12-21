@@ -10,6 +10,12 @@ class CheckCommand extends AbstractCommand
 {
     protected static $defaultName = 'pluginchecker:check';
 
+    protected function configure(): void
+    {
+        $this
+            ->setDescription('Compare shopware plugins with the checklist.');
+    }
+
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new ShopwareStyle($input, $output);
@@ -31,7 +37,7 @@ class CheckCommand extends AbstractCommand
 
     public function checkMissing(InputInterface $input, OutputInterface $output, ShopwareStyle $io)
     {
-        $output->writeln((string) '<fg=yellow>Installed in SW, but not in the check list</>');
+        $output->writeln((string) '<fg=yellow>Active in SW, but not in the check list</>');
 
         $plugins = $this->getMissingPlugins();
         $this->outputMissingPlugins($plugins, $output);
