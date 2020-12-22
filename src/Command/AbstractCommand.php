@@ -34,7 +34,7 @@ abstract class AbstractCommand extends Command
     /**
      * @var string
      */
-    private $projectDir;
+    public $projectDir;
 
     /**
      * @var string

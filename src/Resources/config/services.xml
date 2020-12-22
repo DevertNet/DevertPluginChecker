@@ -40,5 +40,23 @@
             
             <tag name="console.command"/>
         </service>
+
+        <service id="Devert\PluginChecker\Command\DeletePrepareCommand">
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginLifecycleService"/>
+            <argument type="service" id="plugin.repository"/>
+            <argument type="service" id="Shopware\Core\Framework\Adapter\Cache\CacheClearer"/>
+            <argument>%kernel.project_dir%</argument>
+            
+            <tag name="console.command"/>
+        </service>
+
+        <service id="Devert\PluginChecker\Command\DeleteFinishCommand">
+            <argument type="service" id="Shopware\Core\Framework\Plugin\PluginLifecycleService"/>
+            <argument type="service" id="plugin.repository"/>
+            <argument type="service" id="Shopware\Core\Framework\Adapter\Cache\CacheClearer"/>
+            <argument>%kernel.project_dir%</argument>
+            
+            <tag name="console.command"/>
+        </service>
     </services>
 </container>
