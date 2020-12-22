@@ -1,0 +1,7 @@
+{% block sw_plugin_list_top_actions %}
+    {% parent %}
+
+    <div v-show="plugincheckerWarningActive" class="pluginchecker-message" style="margin-bottom: 15px; background-color: #ff7e7e; color: #fff; padding: 15px; border: 1px solid #700000; border-radius: 3px;">
+        <span v-html="plugincheckerWarningText"></span>
+    </div>
+{% endblock %}

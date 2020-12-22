@@ -17,10 +17,15 @@ Write checklist to file.
 `./bin/console pluginchecker:update`
 Update (local) all plugins.
 
+## Details
+- Only install, activate or deactivate Plugins. Never delete or uninstall a plugin.
+- Every action (install, activate or deactivate) will be logged (`var/log/pluginchecker_*.log`)
+- Show a warning message in the backend plugin manager (Something like "please use git")
+- Warning message and text can be de/activated/edited via the plugin settings 
 
 ## Todos:
-- Readme / https://github.com/faressoft/terminalizer
-- Warnung in Plugin Manager im Backend
+- Enhance readme with https://github.com/faressoft/terminalizer
+- Enhance readme with screenshot of warning
 - Pugin Icon
-- Plugins löschen (aus SW)
-- Gelöschte Plugins anzeigen (in Checklist Vorhanden, aber nicht in SW)
+- Delete plugin helper (aus SW)
+- Show deleted plugins (in Checklist Vorhanden, aber nicht in SW)
