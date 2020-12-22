@@ -20,5 +20,7 @@ class WriteCommand extends AbstractCommand
         $this->writeCheckList();
         $output->writeln((string) '<fg=green>Checklist successful writen to</>');
         $output->writeln((string) '  <fg=yellow> ' . $this->getFilePath() . '</>');
+
+        $this->log('write', 'Checklist successful writen');
     }
 }

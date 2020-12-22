@@ -230,4 +230,18 @@ abstract class AbstractCommand extends Command
             $output->writeln((string) '  <fg=green>No mismatch found!</>');
         }
     }
+
+    public function log(string $command, $message)
+    {
+        $logFile = $this->projectDir . '/var/log/pluginchecker_' . $command . '.log';
+
+        $data = [
+            date("Y-m-d H:i:s"),
+            '[' . $command . ']',
+            $message,
+            "\n"
+        ]; 
+
+        file_put_contents($logFile, implode(' ', $data), FILE_APPEND);
+    }
 }

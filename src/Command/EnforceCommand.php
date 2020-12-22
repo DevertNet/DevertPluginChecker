@@ -49,7 +49,10 @@ class EnforceCommand extends AbstractCommand
 
                     if ($swPlugin->getInstalledAt() && $swPlugin->getActive())
                     {
-                        $output->writeln('Deactivate ' . $swPlugin->getName());
+                        $msg = 'Deactivate ' . $swPlugin->getName();
+                        $output->writeln($msg);
+                        $this->log('enforce', $msg);
+
                         $this->pluginLifecycleService->deactivatePlugin($swPlugin, $context);
                     }
                 }
@@ -82,16 +85,25 @@ class EnforceCommand extends AbstractCommand
 
                     if($checklistPlugin['active'] && $swPlugin->getInstalledAt() === null)
                     {
-                        $output->writeln('Install ' . $swPlugin->getName());
+                        $msg = 'Install ' . $swPlugin->getName();
+                        $output->writeln($msg);
+                        $this->log('enforce', $msg);
+
                         $this->pluginLifecycleService->installPlugin($swPlugin, $context);
                     }
 
                     if ($checklistPlugin['active'])
                     {
-                        $output->writeln('Activate ' . $swPlugin->getName());
+                        $msg = 'Activate ' . $swPlugin->getName();
+                        $output->writeln($msg);
+                        $this->log('enforce', $msg);
+
                         $this->pluginLifecycleService->activatePlugin($swPlugin, $context);
                     }else{
-                        $output->writeln('Deactivate ' . $swPlugin->getName());
+                        $msg = 'Deactivate ' . $swPlugin->getName();
+                        $output->writeln($msg);
+                        $this->log('enforce', $msg);
+
                         $this->pluginLifecycleService->deactivatePlugin($swPlugin, $context);
                     }
                 }

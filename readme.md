@@ -14,12 +14,13 @@ Enforce the checklist. Asks before changes are made. (e.g. de/activate/install p
 `./bin/console pluginchecker:write`
 Write checklist to file.
 
+`./bin/console pluginchecker:update`
+Update (local) all plugins.
+
 
 ## Todos:
 - Readme / https://github.com/faressoft/terminalizer
 - Warnung in Plugin Manager im Backend
-- Changelog bei jeder ausführung: Was wurde gemacht
 - Pugin Icon
 - Plugins löschen (aus SW)
 - Gelöschte Plugins anzeigen (in Checklist Vorhanden, aber nicht in SW)
-- Updates durchführen
