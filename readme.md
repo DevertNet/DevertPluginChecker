@@ -24,8 +24,7 @@ Update (local) all plugins.
 - Warning message and text can be de/activated/edited via the plugin settings 
 
 ## Todos:
+- Delete plugin helper (aus SW)
 - Enhance readme with https://github.com/faressoft/terminalizer
 - Enhance readme with screenshot of warning
-- Pugin Icon
-- Delete plugin helper (aus SW)
 - Show deleted plugins (in Checklist Vorhanden, aber nicht in SW)
